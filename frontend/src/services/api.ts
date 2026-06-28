@@ -9,10 +9,11 @@ import type {
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 export const TOKEN_KEY = 'ai_platform_token'
+const API_URL = 'https://lumina-ai-1-intq.onrender.com'
 
 // ─── Axios Instance ────────────────────────────────────────────────────────────
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
+  baseURL: API_URL,
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
