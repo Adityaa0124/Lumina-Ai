@@ -10,7 +10,7 @@ import { authMiddleware } from "./middleware/authmiddleware";
 import { generateResponse } from "./ai/gemini";
 
 const app = express();
-app.use(cors({ origin: "https://lumina-ai-whsw.vercel.app" }));
+app.use(cors({ origin: ["https://lumina-ai-whsw.vercel.app", "https://lumina-iiitd.vercel.app"] }));
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
