@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import "dotenv/config";
@@ -9,6 +10,7 @@ import { authMiddleware } from "./middleware/authmiddleware";
 import { generateResponse } from "./ai/gemini";
 
 const app = express();
+app.use(cors({ origin: "https://lumina-ai-whsw.vercel.app" }));
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
