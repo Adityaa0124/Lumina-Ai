@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
@@ -174,6 +174,10 @@ app.delete("/history/:id", authMiddleware, async (req, res) => {
         console.error(error);
         return res.status(500).json({ message: "Internal server error" });
     }
+});
+
+app.get("/health", (req: Request, res: Response) => {
+    res.status(200).json({ message: "backend is running" });
 });
 
 async function main() {
