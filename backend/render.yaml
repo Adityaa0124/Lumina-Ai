@@ -3,7 +3,7 @@ services:
     name: lumina-ai-backend
     env: node
     buildCommand: npm install
-    startCommand: npm run start
+    startCommand: npx tsx index.ts
     envVars:
       - key: NODE_VERSION
         value: 24.14.1
