@@ -1,18 +1,3 @@
-// Polyfill for Bun missing node:v8 isBuildingSnapshot
-const _getBuiltinModule = globalThis.process?.getBuiltinModule;
-if (_getBuiltinModule) {
-  globalThis.process.getBuiltinModule = function (name: string) {
-    if (name === "v8") {
-      return {
-        startupSnapshot: {
-          isBuildingSnapshot: () => false
-        }
-      };
-    }
-    return _getBuiltinModule.apply(this, arguments as any);
-  };
-}
-
 import express from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
