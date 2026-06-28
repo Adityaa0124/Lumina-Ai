@@ -9,7 +9,8 @@
     "@types/cors": "^2.8.19",
     "@types/dotenv": "^8.2.3",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/mongoose": "^5.11.97"
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^26.0.1"
   },
   "peerDependencies": {
     "typescript": "^5"
