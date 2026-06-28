@@ -9,7 +9,6 @@ export function useChat() {
   const [isLoading, setIsLoading] = useState(false)
   const [activeChatId, setActiveChatId] = useState<string | null>(null)
 
-  // Load a past conversation
   const loadConversation = useCallback((chat: Chat) => {
     setActiveChatId(chat._id)
     setMessages([
@@ -30,13 +29,11 @@ export function useChat() {
     ])
   }, [])
 
-  // Start a new chat (clear messages)
   const newChat = useCallback(() => {
     setMessages([])
     setActiveChatId(null)
   }, [])
 
-  // Send a message
   const sendMessage = useCallback(
     async (prompt: string, onNewChat?: (chat: Chat) => void) => {
       if (!prompt.trim() || isLoading) return
@@ -44,7 +41,6 @@ export function useChat() {
       const userMsgId = generateId()
       const aiMsgId = generateId()
 
-      // Optimistically add user message
       setMessages((prev) => [
         ...prev,
         {
@@ -61,7 +57,6 @@ export function useChat() {
         const res = await chatApi.send(prompt.trim())
         const chat = res.data.chat
 
-        // Append the actual response
         setMessages((prev) => [
           ...prev.map((m) =>
             m.id === userMsgId ? { ...m, chatId: chat._id } : m,
@@ -78,7 +73,6 @@ export function useChat() {
         setActiveChatId(chat._id)
         onNewChat?.(chat)
       } catch (err) {
-        // Remove the user message on error
         setMessages((prev) => prev.filter((m) => m.id !== userMsgId))
         toast.error(getErrorMessage(err))
       } finally {

@@ -19,7 +19,6 @@ export default function NotFoundPage() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="relative z-10 text-center max-w-md"
       >
-        {/* 404 number */}
         <div className="text-[120px] font-bold leading-none gradient-text select-none mb-4">
           404
         </div>

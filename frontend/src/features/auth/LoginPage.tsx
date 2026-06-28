@@ -28,14 +28,11 @@ export default function LoginPage() {
   return (
     <AuthLayout>
       <div className="flex flex-col items-center">
-        {/* Logo */}
         <Link to="/" className="mb-8 flex items-center justify-center w-10 h-10 rounded-[8px] bg-text-primary text-background">
           <Command className="w-5 h-5" />
         </Link>
 
-        {/* Form Card */}
         <div className="w-full bg-surface-flat rounded-[12px] p-8 shadow-card relative overflow-hidden">
-          {/* Top highlight line */}
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent pointer-events-none" />
           
           <div className="text-center mb-8">
@@ -49,7 +46,6 @@ export default function LoginPage() {
 
           <form onSubmit={onSubmit} className="space-y-5">
 
-            {/* Username */}
             <div className="space-y-2">
               <label className="text-[13px] font-medium text-text-primary">Username</label>
               <div className="relative">
@@ -79,7 +75,6 @@ export default function LoginPage() {
               </AnimatePresence>
             </div>
 
-            {/* Password */}
             <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <label className="text-[13px] font-medium text-text-primary">Password</label>
@@ -121,7 +116,6 @@ export default function LoginPage() {
               </AnimatePresence>
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
               disabled={isLoading}
@@ -139,7 +133,6 @@ export default function LoginPage() {
           </form>
         </div>
 
-        {/* Footer */}
         <p className="mt-8 text-[13px] text-text-secondary">
           Don't have an account?{' '}
           <Link to="/signup" className="text-text-primary hover:underline font-medium">

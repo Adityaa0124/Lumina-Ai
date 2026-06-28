@@ -51,14 +51,11 @@ export default function SignupPage() {
   return (
     <AuthLayout>
       <div className="flex flex-col items-center pb-12">
-        {/* Logo */}
         <Link to="/" className="mb-8 flex items-center justify-center w-10 h-10 rounded-[8px] bg-text-primary text-background">
           <Command className="w-5 h-5" />
         </Link>
 
-        {/* Form Card */}
         <div className="w-full bg-surface-flat rounded-[12px] p-8 shadow-card relative overflow-hidden">
-          {/* Top highlight line */}
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent pointer-events-none" />
           
           <div className="text-center mb-8">
@@ -72,7 +69,6 @@ export default function SignupPage() {
 
           <form onSubmit={onSubmit} className="space-y-4">
 
-            {/* Username */}
             <div className="space-y-1.5">
               <label className="text-[13px] font-medium text-text-primary">Username</label>
               <input
@@ -99,7 +95,6 @@ export default function SignupPage() {
               </AnimatePresence>
             </div>
 
-            {/* Email */}
             <div className="space-y-1.5">
               <label className="text-[13px] font-medium text-text-primary">Email</label>
               <input
@@ -127,7 +122,6 @@ export default function SignupPage() {
               </AnimatePresence>
             </div>
 
-            {/* Password */}
             <div className="space-y-1.5">
               <label className="text-[13px] font-medium text-text-primary">Password</label>
               <div className="relative">
@@ -152,7 +146,6 @@ export default function SignupPage() {
                 </button>
               </div>
 
-              {/* Minimalist Strength Meter */}
               {passwordValue.length > 0 && (
                 <div className="flex gap-1 pt-1">
                   {[1, 2, 3].map((lvl) => (
@@ -180,7 +173,6 @@ export default function SignupPage() {
               </AnimatePresence>
             </div>
 
-            {/* Confirm Password */}
             <div className="space-y-1.5">
               <label className="text-[13px] font-medium text-text-primary">Confirm Password</label>
               <input
@@ -208,7 +200,6 @@ export default function SignupPage() {
               </AnimatePresence>
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
               disabled={isLoading}
@@ -226,7 +217,6 @@ export default function SignupPage() {
           </form>
         </div>
 
-        {/* Footer */}
         <p className="mt-8 text-[13px] text-text-secondary">
           Already have an account?{' '}
           <Link to="/login" className="text-text-primary hover:underline font-medium">

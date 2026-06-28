@@ -38,7 +38,6 @@ export function MessageBubble({ message }: MessageBubbleProps) {
       className={cn('group flex w-full', isUser ? 'justify-end' : 'justify-start')}
     >
       {isUser ? (
-        /* ── User Message ── */
         <div className="relative flex items-start gap-2 max-w-[78%]">
           <div className="px-4 py-3 rounded-[10px] rounded-tr-[3px] bg-[#141414] border border-[#2A2A2A] text-[14px] leading-[1.7] text-[#E8E8E8] select-text">
             <ReactMarkdown
@@ -66,16 +65,13 @@ export function MessageBubble({ message }: MessageBubbleProps) {
           </div>
         </div>
       ) : (
-        /* ── AI Message ── */
         <div className="flex gap-3 w-full max-w-[92%]">
-          {/* AI avatar */}
           <div className="flex-shrink-0 mt-0.5">
             <div className="w-[26px] h-[26px] rounded-[6px] bg-[#EDEDED] flex items-center justify-center shadow-sm">
               <Command className="w-3.5 h-3.5 text-[#000000]" />
             </div>
           </div>
 
-          {/* Content */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-2">
               <span className="text-[11px] font-medium text-[#52525A] tracking-wide uppercase">Lumina</span>

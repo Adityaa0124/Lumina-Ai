@@ -12,8 +12,7 @@ export function useHistory() {
     setIsLoading(true)
     try {
       const res = await chatApi.getHistory()
-      // Sort newest first
-      const sorted = [...res.data].sort(
+        const sorted = [...res.data].sort(
         (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
       )
       setChats(sorted)
@@ -34,14 +33,12 @@ export function useHistory() {
 
   const removeChat = useCallback(
     async (id: string) => {
-      // Optimistic removal
       setChats((prev) => prev.filter((c) => c._id !== id))
       try {
         await chatApi.delete(id)
         toast.success('Conversation deleted')
       } catch (err) {
         toast.error(getErrorMessage(err))
-        // Revert on failure
         fetchHistory()
       }
     },
@@ -50,8 +47,7 @@ export function useHistory() {
 
   const renameChat = useCallback(
     async (id: string, newPrompt: string) => {
-      // Optimistic update
-      setChats((prev) =>
+        setChats((prev) =>
         prev.map((c) => (c._id === id ? { ...c, prompt: newPrompt } : c)),
       )
       try {

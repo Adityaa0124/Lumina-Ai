@@ -47,14 +47,12 @@ export default function SettingsPage() {
 
   return (
     <div className="min-h-screen bg-[#000000] text-[#EDEDED] font-sans selection:bg-[#222222] selection:text-[#FFFFFF]">
-      {/* ─── Ambient Top Glow (Linear Style) ─── */}
       <div className="pointer-events-none fixed inset-0 flex justify-center overflow-hidden">
         <div className="w-[800px] h-[300px] bg-white opacity-[0.03] blur-[100px] -translate-y-1/2 rounded-[100%]" />
       </div>
 
       <div className="relative z-10 max-w-[640px] mx-auto px-6 py-12 lg:py-20">
         
-        {/* ─── Header ─── */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,7 +75,6 @@ export default function SettingsPage() {
           </p>
         </motion.div>
 
-        {/* ─── Profile Card ─── */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,7 +92,6 @@ export default function SettingsPage() {
           </div>
         </motion.div>
 
-        {/* ─── Settings Sections ─── */}
         <div className="flex flex-col gap-6">
           {sections.map((section, si) => (
             <motion.div
@@ -104,7 +100,6 @@ export default function SettingsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + si * 0.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Section header */}
               <div className="flex items-center gap-2 mb-3 px-1">
                 <section.icon className="w-4 h-4 text-[#8A8F98]" />
                 <h2 className="text-[13px] font-medium text-[#EDEDED]">
@@ -112,9 +107,7 @@ export default function SettingsPage() {
                 </h2>
               </div>
 
-              {/* Items Container */}
               <div className="bg-[#0A0A0A] rounded-xl border border-[#27272A]/80 shadow-sm overflow-hidden relative">
-                {/* Subtle top inner highlight */}
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.05] to-transparent pointer-events-none" />
                 
                 {section.items.map((item, ii) => (
@@ -146,7 +139,6 @@ export default function SettingsPage() {
           ))}
         </div>
 
-        {/* ─── Danger Zone ─── */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

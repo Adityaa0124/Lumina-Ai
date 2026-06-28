@@ -4,7 +4,6 @@ import { AnimatePresence } from 'framer-motion'
 import { Toaster } from 'sonner'
 import { useAuth } from '@/context/AuthContext'
 
-// ─── Lazy-loaded pages ────────────────────────────────────────────────────────
 const LandingPage   = lazy(() => import('@/features/landing/LandingPage'))
 const LoginPage     = lazy(() => import('@/features/auth/LoginPage'))
 const SignupPage    = lazy(() => import('@/features/auth/SignupPage'))
@@ -12,7 +11,6 @@ const ChatPage      = lazy(() => import('@/features/chat/ChatPage'))
 const SettingsPage  = lazy(() => import('@/features/settings/SettingsPage'))
 const NotFoundPage  = lazy(() => import('@/pages/NotFoundPage'))
 
-// ─── Full-screen spinner for route suspension ──────────────────────────────────
 function PageLoader() {
   return (
     <div className="flex h-screen items-center justify-center bg-background">
@@ -24,7 +22,6 @@ function PageLoader() {
   )
 }
 
-// ─── Protected route ──────────────────────────────────────────────────────────
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated, isLoading } = useAuth()
   if (isLoading) return <PageLoader />
@@ -32,7 +29,6 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
 
-// ─── Public-only route (redirect to chat if logged in) ────────────────────────
 function PublicRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated, isLoading } = useAuth()
   if (isLoading) return <PageLoader />
@@ -40,7 +36,6 @@ function PublicRoute({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
 
-// ─── App ──────────────────────────────────────────────────────────────────────
 export default function App() {
   return (
     <>
@@ -60,7 +55,6 @@ export default function App() {
       <AnimatePresence mode="wait">
         <Suspense fallback={<PageLoader />}>
           <Routes>
-            {/* Public */}
             <Route path="/" element={<LandingPage />} />
 
             <Route
@@ -80,7 +74,6 @@ export default function App() {
               }
             />
 
-            {/* Protected */}
             <Route
               path="/chat"
               element={
@@ -98,7 +91,6 @@ export default function App() {
               }
             />
 
-            {/* 404 */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

@@ -40,12 +40,10 @@ const examplePrompts = [
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-text-primary selection:bg-[#222222] selection:text-[#FFFFFF] overflow-x-hidden">
-      {/* ─── Ambient Top Spotlight (Linear Style) ─── */}
       <div className="pointer-events-none fixed inset-0 flex justify-center overflow-hidden">
         <div className="w-[1200px] h-[400px] bg-white opacity-[0.025] blur-[120px] -translate-y-[60%] rounded-full" />
       </div>
 
-      {/* Grid overlay */}
       <div className="pointer-events-none fixed inset-0 opacity-[0.015]"
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
@@ -54,7 +52,6 @@ export default function LandingPage() {
         }}
       />
 
-      {/* ─── Nav ─── */}
       <nav className="relative z-10 flex items-center justify-between px-6 py-4 max-w-[1200px] mx-auto border-b border-border/50">
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded flex items-center justify-center bg-text-primary text-background">
@@ -78,14 +75,12 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* ─── Hero ─── */}
       <section className="relative z-10 pt-32 pb-24 px-6 text-center max-w-4xl mx-auto flex flex-col items-center">
         <motion.div
           initial="hidden"
           animate="visible"
           className="flex flex-col items-center"
         >
-          {/* Badge */}
           <motion.div
             variants={fadeUp}
             custom={0}
@@ -95,7 +90,6 @@ export default function LandingPage() {
             Lumina Engine v2 is now live
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
             variants={fadeUp}
             custom={1}
@@ -104,7 +98,6 @@ export default function LandingPage() {
             Think clearer.<br />Build faster.
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p
             variants={fadeUp}
             custom={2}
@@ -113,7 +106,6 @@ export default function LandingPage() {
             Lumina provides structured, high-signal explanations to help you master complex topics in engineering and design.
           </motion.p>
 
-          {/* CTA buttons */}
           <motion.div variants={fadeUp} custom={3} className="flex items-center gap-4 flex-wrap justify-center mb-12">
             <Link
               to="/signup"
@@ -135,7 +127,6 @@ export default function LandingPage() {
             </a>
           </motion.div>
 
-          {/* Example prompts */}
           <motion.div
             variants={fadeUp}
             custom={4}
@@ -154,7 +145,6 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
-      {/* ─── Chat preview ─── */}
       <section className="relative z-10 px-6 max-w-[900px] mx-auto mb-32">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -163,10 +153,8 @@ export default function LandingPage() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="rounded-[12px] bg-background border border-border shadow-[0_0_0_1px_rgba(255,255,255,0.05),_0_8px_40px_-12px_rgba(0,0,0,1)] overflow-hidden relative"
         >
-          {/* Top highlight */}
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent" />
           
-          {/* Window chrome */}
           <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-surface">
             <div className="w-2.5 h-2.5 rounded-full bg-border" />
             <div className="w-2.5 h-2.5 rounded-full bg-border" />
@@ -176,16 +164,13 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Mock chat */}
           <div className="p-8 flex flex-col gap-8 bg-[#0A0A0A]">
-            {/* User message */}
             <div className="flex justify-end">
               <div className="max-w-[80%] px-4 py-2.5 rounded-[8px] bg-surface-elevated border border-border text-[14px] leading-relaxed text-text-primary">
                 How does event delegation work in JavaScript?
               </div>
             </div>
 
-            {/* AI message */}
             <div className="flex gap-4 max-w-[90%]">
               <div className="w-6 h-6 rounded flex items-center justify-center bg-text-primary text-background flex-shrink-0 mt-0.5">
                 <Command className="w-3.5 h-3.5" />
@@ -211,7 +196,6 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
-      {/* ─── Features ─── */}
       <section className="relative z-10 px-6 max-w-[1000px] mx-auto pb-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feat, i) => (
@@ -233,7 +217,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
       <section className="relative z-10 px-6 pb-32 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
@@ -259,7 +242,6 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
-      {/* ─── Footer ─── */}
       <footer className="relative z-10 border-t border-border px-6 py-8">
         <div className="max-w-[1200px] mx-auto flex items-center justify-between text-[13px] text-text-muted font-medium">
           <div className="flex items-center gap-2">

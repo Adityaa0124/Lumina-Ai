@@ -24,7 +24,6 @@
     overflow-x: hidden;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 4px;
     height: 4px;
@@ -39,24 +38,20 @@
     @apply bg-border-strong;
   }
 
-  /* Selection */
   ::selection {
     @apply bg-accent-muted text-accent-hover;
   }
 
-  /* Focus ring */
   :focus-visible {
     @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
   }
 
-  /* Remove default focus ring */
   :focus:not(:focus-visible) {
     outline: none;
   }
 }
 
 @layer components {
-  /* Thin flat surfaces (Linear style) */
   .surface-flat {
     @apply bg-[#0A0A0A] border border-[rgba(255,255,255,0.08)];
   }
@@ -65,7 +60,6 @@
     @apply bg-[#111111] border border-[rgba(255,255,255,0.12)];
   }
 
-  /* Shimmer loading skeleton */
   .skeleton {
     @apply bg-surface-elevated rounded;
     background-image: linear-gradient(
@@ -78,7 +72,6 @@
     animation: shimmer 2s infinite linear;
   }
 
-  /* Sidebar item */
   .sidebar-item {
     @apply relative flex items-center gap-2.5 rounded-[6px] px-3 py-2 text-[13px] text-[#8A8F98]
            transition-colors duration-150 cursor-pointer select-none font-medium;
@@ -92,7 +85,6 @@
     @apply bg-surface-elevated text-[#FFFFFF] shadow-sm;
   }
 
-  /* Code block scrollbar */
   .code-scroll::-webkit-scrollbar {
     height: 6px;
   }

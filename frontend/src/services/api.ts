@@ -7,11 +7,9 @@ import type {
   Chat,
 } from '@/types'
 
-// ─── Constants ─────────────────────────────────────────────────────────────────
 export const TOKEN_KEY = 'ai_platform_token'
 const API_URL = 'https://lumina-ai-1-intq.onrender.com'
 
-// ─── Axios Instance ────────────────────────────────────────────────────────────
 const api = axios.create({
   baseURL: API_URL,
   timeout: 30000,
@@ -20,7 +18,6 @@ const api = axios.create({
   },
 })
 
-// ─── Request Interceptor: attach JWT ──────────────────────────────────────────
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem(TOKEN_KEY)
@@ -32,8 +29,6 @@ api.interceptors.request.use(
   (error) => Promise.reject(error),
 )
 
-// ─── Response Interceptor: handle 401 ─────────────────────────────────────────
-// Use a flag to avoid firing auth:expired during the initial profile fetch
 let _suppressExpiry = false
 
 api.interceptors.response.use(
@@ -41,7 +36,6 @@ api.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401 && !_suppressExpiry) {
       localStorage.removeItem(TOKEN_KEY)
-      // Dispatch a custom event so AuthContext can react without circular imports
       window.dispatchEvent(new CustomEvent('auth:expired'))
     }
     return Promise.reject(error)
@@ -53,7 +47,6 @@ export function suppressExpiryOnce(fn: () => Promise<unknown>) {
   return fn().finally(() => { _suppressExpiry = false })
 }
 
-// ─── Auth Endpoints ────────────────────────────────────────────────────────────
 export const authApi = {
   signup: (data: { username: string; email: string; password: string }) =>
     api.post<AuthSignupResponse>('/signup', data),
@@ -65,7 +58,6 @@ export const authApi = {
     api.get<ProfileResponse>('/profile'),
 }
 
-// ─── Chat Endpoints ────────────────────────────────────────────────────────────
 export const chatApi = {
   send: (prompt: string) =>
     api.post<ChatResponse>('/chat', { prompt }),

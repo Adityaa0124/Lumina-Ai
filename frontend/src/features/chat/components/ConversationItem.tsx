@@ -107,14 +107,12 @@ export function ConversationItem({
           </button>
         </div>
       ) : (
-        /* Normal display */
         <>
           <div className="flex-1 min-w-0">
             <p className="text-sm truncate">{getConversationTitle(chat.prompt)}</p>
             <p className="text-[10px] text-text-disabled mt-0.5">{formatDate(chat.createdAt)}</p>
           </div>
 
-          {/* Context menu trigger */}
           <div className="relative flex-shrink-0">
             <button
               type="button"
@@ -136,7 +134,6 @@ export function ConversationItem({
             <AnimatePresence>
               {showMenu && (
                 <>
-                  {/* Click-away overlay */}
                   <div
                     className="fixed inset-0 z-40"
                     onClick={(e) => { e.stopPropagation(); setShowMenu(false) }}

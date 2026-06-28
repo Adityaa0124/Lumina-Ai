@@ -17,7 +17,6 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight]}
         components={{
-          // Custom code block with copy button
           code({ className: codeClassName, children, ...props }) {
             const match = /language-(\w+)/.exec(codeClassName || '')
             const isBlock = match !== null || String(children).includes('\n')
@@ -43,7 +42,6 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
             )
           },
 
-          // Links open in new tab
           a({ children, href, ...props }) {
             return (
               <a
@@ -58,7 +56,6 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
             )
           },
 
-          // Styled blockquote
           blockquote({ children }) {
             return (
               <blockquote className="border-l-2 border-accent pl-4 text-text-secondary italic">
@@ -67,7 +64,6 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
             )
           },
 
-          // Table with dark styling
           table({ children }) {
             return (
               <div className="overflow-x-auto not-prose my-4">

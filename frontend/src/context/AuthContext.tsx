@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom'
 import { authApi, TOKEN_KEY, suppressExpiryOnce } from '@/services/api'
 import type { User } from '@/types'
 
-// ─── Context Shape ─────────────────────────────────────────────────────────────
 interface AuthContextValue {
   user: User | null
   token: string | null
@@ -22,7 +21,6 @@ interface AuthContextValue {
 
 const AuthContext = createContext<AuthContextValue | null>(null)
 
-// ─── Provider ─────────────────────────────────────────────────────────────────
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [token, setToken] = useState<string | null>(() =>
@@ -38,14 +36,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     navigate('/login', { replace: true })
   }, [navigate])
 
-  // Listen for 401 from axios interceptor
   useEffect(() => {
     const handler = () => logout()
     window.addEventListener('auth:expired', handler)
     return () => window.removeEventListener('auth:expired', handler)
   }, [logout])
 
-  // Restore session on mount
   useEffect(() => {
     const storedToken = localStorage.getItem(TOKEN_KEY)
     if (!storedToken) {
@@ -70,12 +66,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(TOKEN_KEY, newToken)
     setToken(newToken)
     try {
-      // Use suppressExpiryOnce so a stale-token profile 401 doesn't
-      // immediately fire auth:expired and wipe the token we just saved
       const res = await suppressExpiryOnce(() => authApi.profile()) as Awaited<ReturnType<typeof authApi.profile>>
       setUser({ userId: res.data.userId })
     } catch {
-      // Token stored but profile failed; still treat as logged in
       setUser({ userId: 'unknown' })
     }
   }, [])
@@ -96,7 +89,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   )
 }
 
-// ─── Hook ─────────────────────────────────────────────────────────────────────
 export function useAuth(): AuthContextValue {
   const ctx = useContext(AuthContext)
   if (!ctx) throw new Error('useAuth must be used inside AuthProvider')

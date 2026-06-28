@@ -42,7 +42,6 @@ export function Sidebar({
 
   return (
     <div className="flex flex-col h-full bg-[#0A0A0A] text-[#EDEDED]">
-      {/* ─── Top Header ─── */}
       <div className="p-3 border-b border-[#27272A]/50">
         <button
           type="button"
@@ -56,7 +55,6 @@ export function Sidebar({
         </button>
       </div>
 
-      {/* ─── Search ─── */}
       <div className="px-3 pt-4 pb-2">
         <div className="relative group">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#52525A] group-focus-within:text-[#EDEDED] transition-colors" />
@@ -70,7 +68,6 @@ export function Sidebar({
         </div>
       </div>
 
-      {/* ─── Chat List ─── */}
       <div className="flex-1 overflow-y-auto scrollbar-hidden px-2 pb-4">
         {isLoading ? (
           <div className="flex flex-col gap-1 px-1 py-2">
@@ -106,7 +103,6 @@ export function Sidebar({
         )}
       </div>
 
-      {/* ─── User Footer ─── */}
       <div className="p-3 border-t border-[#27272A]/50 mt-auto">
         <Link
           to="/settings"
@@ -125,9 +121,6 @@ export function Sidebar({
   )
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Item Component
-// ─────────────────────────────────────────────────────────────────────────────
 interface ConversationItemProps {
   chat: Chat
   isActive: boolean

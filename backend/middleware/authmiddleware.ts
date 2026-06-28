@@ -14,7 +14,6 @@ export async function authMiddleware(
     });
   }
 
-  // Support both "Bearer <token>" and raw token formats
   const token = authHeader.startsWith("Bearer ")
     ? authHeader.slice(7)
     : authHeader;

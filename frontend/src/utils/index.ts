@@ -1,12 +1,10 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-// ─── Tailwind class merge ──────────────────────────────────────────────────────
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// ─── Date formatting ──────────────────────────────────────────────────────────
 export function formatDate(date: string | Date): string {
   const d = new Date(date)
   const now = new Date()
@@ -24,19 +22,16 @@ export function formatDate(date: string | Date): string {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
-// ─── Text truncation ──────────────────────────────────────────────────────────
 export function truncateText(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text
   return text.slice(0, maxLength).trimEnd() + '…'
 }
 
-// ─── Extract title from prompt ────────────────────────────────────────────────
 export function getConversationTitle(prompt: string): string {
   const cleaned = prompt.replace(/\n/g, ' ').trim()
   return truncateText(cleaned, 42)
 }
 
-// ─── API error message extractor ──────────────────────────────────────────────
 export function getErrorMessage(error: unknown): string {
   if (error && typeof error === 'object' && 'response' in error) {
     const axiosError = error as { response?: { data?: { message?: string } } }
@@ -46,12 +41,10 @@ export function getErrorMessage(error: unknown): string {
   return 'An unexpected error occurred'
 }
 
-// ─── Generate a local message ID ──────────────────────────────────────────────
 export function generateId(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
 }
 
-// ─── Group chats by time period ───────────────────────────────────────────────
 export type TimeGroup = 'Today' | 'Yesterday' | 'This Week' | 'Earlier'
 
 export function groupChatsByTime(chats: { createdAt: string }[]): Record<TimeGroup, number[]> {
@@ -75,7 +68,6 @@ export function groupChatsByTime(chats: { createdAt: string }[]): Record<TimeGro
   return groups
 }
 
-// ─── Copy to clipboard ────────────────────────────────────────────────────────
 export async function copyToClipboard(text: string): Promise<boolean> {
   try {
     await navigator.clipboard.writeText(text)
@@ -85,7 +77,6 @@ export async function copyToClipboard(text: string): Promise<boolean> {
   }
 }
 
-// ─── Keyboard shortcut formatter ──────────────────────────────────────────────
 export function isMac(): boolean {
   return navigator.platform.toLowerCase().includes('mac')
 }

@@ -25,7 +25,6 @@ export function ChatArea({ messages, isTyping, onPromptSelect, disabled }: ChatA
   return (
     <div ref={scrollRef} className="flex-1 overflow-y-auto scrollbar-hidden bg-[#000000] relative">
       {isEmpty ? (
-        /* ── Empty State ── */
         <div className="h-full flex flex-col items-center justify-center p-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -33,7 +32,6 @@ export function ChatArea({ messages, isTyping, onPromptSelect, disabled }: ChatA
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="w-full max-w-xl flex flex-col items-center"
           >
-            {/* Logo mark */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -43,7 +41,6 @@ export function ChatArea({ messages, isTyping, onPromptSelect, disabled }: ChatA
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-b from-[#222222] to-[#111111] border border-[#2A2A2A] flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                 <Command className="w-6 h-6 text-[#EDEDED]" />
               </div>
-              {/* Glow behind */}
               <div className="absolute inset-0 rounded-2xl bg-[#EDEDED]/5 blur-xl -z-10 scale-150" />
             </motion.div>
 
@@ -69,7 +66,6 @@ export function ChatArea({ messages, isTyping, onPromptSelect, disabled }: ChatA
           </motion.div>
         </div>
       ) : (
-        /* ── Message Thread ── */
         <div className="py-10 px-4 md:px-6 max-w-3xl mx-auto flex flex-col gap-10 pb-6">
           <AnimatePresence initial={false}>
             {messages.map((message) => (

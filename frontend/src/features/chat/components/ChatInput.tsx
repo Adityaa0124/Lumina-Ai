@@ -25,7 +25,6 @@ export function ChatInput({ onSend, disabled, isTyping }: ChatInputProps) {
     adjustHeight()
   }, [input])
 
-  // Auto-focus on mount
   useEffect(() => {
     textareaRef.current?.focus()
   }, [])
@@ -52,7 +51,6 @@ export function ChatInput({ onSend, disabled, isTyping }: ChatInputProps) {
   return (
     <div className="px-4 pb-5 pt-3 bg-[#000000]">
       <div className="max-w-3xl mx-auto">
-        {/* Main input container */}
         <div
           className={cn(
             'relative rounded-[14px] border transition-all duration-200',
@@ -62,7 +60,6 @@ export function ChatInput({ onSend, disabled, isTyping }: ChatInputProps) {
               : 'border-[#1E1E1E] hover:border-[#2A2A2A]',
           )}
         >
-          {/* Top inner highlight */}
           <div className="absolute inset-x-0 top-0 h-px rounded-t-[14px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" />
 
           <textarea
@@ -76,13 +73,11 @@ export function ChatInput({ onSend, disabled, isTyping }: ChatInputProps) {
             rows={1}
           />
 
-          {/* Bottom toolbar */}
           <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-3 pb-3 pointer-events-none">
             <span className="text-[11px] text-[#3A3A3A] pointer-events-none select-none hidden sm:block">
               Shift + Enter for new line
             </span>
 
-            {/* Send / Stop button */}
             <div className="pointer-events-auto ml-auto">
               <AnimatePresence mode="wait">
                 {isTyping ? (
@@ -122,7 +117,6 @@ export function ChatInput({ onSend, disabled, isTyping }: ChatInputProps) {
           </div>
         </div>
 
-        {/* Footer disclaimer */}
         <p className="text-center text-[11px] text-[#2A2A2A] mt-2.5 select-none">
           Lumina can make mistakes. Verify important information.
         </p>

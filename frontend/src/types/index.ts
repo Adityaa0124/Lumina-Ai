@@ -1,11 +1,9 @@
-// ─── User ──────────────────────────────────────────────────────────────────────
 export interface User {
   userId: string
   username?: string
   email?: string
 }
 
-// ─── Chat ──────────────────────────────────────────────────────────────────────
 export interface Chat {
   _id: string
   userId: string
@@ -16,7 +14,6 @@ export interface Chat {
   tempId?: string
 }
 
-// ─── API Responses ─────────────────────────────────────────────────────────────
 export interface AuthSignupResponse {
   id: string
   message: string
@@ -42,7 +39,6 @@ export interface ApiError {
   status?: number
 }
 
-// ─── Form Inputs ────────────────────────────────────────────────────────────────
 export interface SignupFormData {
   username: string
   email: string
@@ -55,7 +51,6 @@ export interface SigninFormData {
   password: string
 }
 
-// ─── UI State ──────────────────────────────────────────────────────────────────
 export type LoadingState = 'idle' | 'loading' | 'success' | 'error'
 
 export interface Message {

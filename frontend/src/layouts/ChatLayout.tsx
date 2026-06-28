@@ -12,12 +12,10 @@ export function ChatLayout({ children, sidebar }: ChatLayoutProps) {
 
   return (
     <div className="flex h-screen bg-[#000000] overflow-hidden text-text-primary selection:bg-[#222222] selection:text-[#FFFFFF]">
-      {/* ─── Desktop Sidebar ─── */}
       <aside className="hidden md:flex w-[260px] flex-shrink-0 border-r border-[#27272A]/80 bg-[#0A0A0A] flex-col">
         {sidebar}
       </aside>
 
-      {/* ─── Mobile Sidebar Overlay ─── */}
       <AnimatePresence>
         {isSidebarOpen && (
           <>
@@ -52,9 +50,7 @@ export function ChatLayout({ children, sidebar }: ChatLayoutProps) {
         )}
       </AnimatePresence>
 
-      {/* ─── Main Content ─── */}
       <main className="flex-1 flex flex-col relative min-w-0 bg-[#000000] overflow-hidden">
-        {/* Mobile menu toggle */}
         <div className="md:hidden flex items-center justify-between p-3 border-b border-[#27272A]/50 bg-[#0A0A0A]">
           <span className="text-[13px] font-medium text-text-primary">Lumina</span>
           <button
