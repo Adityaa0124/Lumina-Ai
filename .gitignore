@@ -1,0 +1,27 @@
+# Dependencies
+node_modules
+
+# Environment variables
+.env
+.env.*
+
+# Build output
+dist
+out
+coverage
+
+# Logs
+logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Agent files
+.agents/
+skills-lock.json
