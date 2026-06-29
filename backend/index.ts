@@ -178,7 +178,7 @@ app.delete("/history/:id", authMiddleware, async (req, res) => {
 });
 
 app.get("/health", (req: Request, res: Response) => {
-    res.status(200).json({ message: "backend is running" });
+    res.send({ message: "backend is running" });
 });
 
 async function main() {
