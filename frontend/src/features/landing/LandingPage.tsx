@@ -57,7 +57,7 @@ export default function LandingPage() {
           <div className="w-6 h-6 rounded flex items-center justify-center bg-text-primary text-background">
             <Command className="w-3.5 h-3.5" />
           </div>
-          <span className="font-semibold tracking-tight text-[14px]">Lumina</span>
+          <span className="font-semibold tracking-tight text-[14px]">Wuup</span>
         </div>
         <div className="flex items-center gap-3">
           <Link
@@ -87,7 +87,7 @@ export default function LandingPage() {
             className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-surface-elevated text-text-secondary text-[12px] font-medium"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-success/80 animate-pulse" />
-            Lumina Engine v2 is now live
+            Wuup Engine v2 is now live
           </motion.div>
 
           <motion.h1
@@ -103,7 +103,7 @@ export default function LandingPage() {
             custom={2}
             className="text-[18px] text-text-secondary max-w-[600px] leading-relaxed text-balance mb-10"
           >
-            Lumina provides structured, high-signal explanations to help you master complex topics in engineering and design.
+            Wuup provides structured, high-signal explanations to help you master complex topics in engineering and design.
           </motion.p>
 
           <motion.div variants={fadeUp} custom={3} className="flex items-center gap-4 flex-wrap justify-center mb-12">
@@ -160,7 +160,7 @@ export default function LandingPage() {
             <div className="w-2.5 h-2.5 rounded-full bg-border" />
             <div className="w-2.5 h-2.5 rounded-full bg-border" />
             <div className="mx-auto flex gap-6">
-              <span className="text-[12px] text-text-secondary font-medium px-2 bg-surface-elevated rounded border border-border">Lumina</span>
+              <span className="text-[12px] text-text-secondary font-medium px-2 bg-surface-elevated rounded border border-border">Wuup</span>
             </div>
           </div>
 
@@ -230,7 +230,7 @@ export default function LandingPage() {
             Start learning today
           </h2>
           <p className="text-text-secondary text-[15px] mb-8 max-w-[400px] mx-auto">
-            Join thousands of engineers and designers using Lumina to accelerate their work.
+            Join thousands of engineers and designers using Wuup to accelerate their work.
           </p>
           <Link
             to="/signup"
@@ -246,7 +246,7 @@ export default function LandingPage() {
         <div className="max-w-[1200px] mx-auto flex items-center justify-between text-[13px] text-text-muted font-medium">
           <div className="flex items-center gap-2">
             <Command className="w-3.5 h-3.5" />
-            <span>Lumina © {new Date().getFullYear()}</span>
+            <span>Wuup © {new Date().getFullYear()}</span>
           </div>
           <div className="flex gap-4">
             <a href="#" className="hover:text-text-secondary transition-colors">Twitter</a>

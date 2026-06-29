@@ -88,7 +88,7 @@ export function ChatArea({ messages, isTyping, onPromptSelect, disabled }: ChatA
                 </div>
                 <div className="flex-1">
                   <div className="mb-2">
-                    <span className="text-[11px] font-medium text-[#52525A] tracking-wide uppercase">Lumina</span>
+                    <span className="text-[11px] font-medium text-[#52525A] tracking-wide uppercase">Wuup</span>
                   </div>
                   <div className="flex items-center gap-1.5 h-6">
                     {[0, 150, 300].map((delay) => (

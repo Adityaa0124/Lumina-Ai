@@ -63,7 +63,7 @@ export default function SignupPage() {
               Create an account
             </h1>
             <p className="text-[13px] text-text-secondary">
-              Join Lumina to start learning with AI.
+              Join Wuup to start learning with AI.
             </p>
           </div>
 

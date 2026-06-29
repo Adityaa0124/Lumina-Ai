@@ -52,7 +52,7 @@ export function ChatLayout({ children, sidebar }: ChatLayoutProps) {
 
       <main className="flex-1 flex flex-col relative min-w-0 bg-[#000000] overflow-hidden">
         <div className="md:hidden flex items-center justify-between p-3 border-b border-[#27272A]/50 bg-[#0A0A0A]">
-          <span className="text-[13px] font-medium text-text-primary">Lumina</span>
+          <span className="text-[13px] font-medium text-text-primary">Wuup</span>
           <button
             type="button"
             onClick={() => setIsSidebarOpen(true)}

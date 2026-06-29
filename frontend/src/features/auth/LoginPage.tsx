@@ -37,7 +37,7 @@ export default function LoginPage() {
           
           <div className="text-center mb-8">
             <h1 className="text-[20px] font-semibold text-text-primary tracking-tight mb-2">
-              Log in to Lumina
+              Log in to Wuup
             </h1>
             <p className="text-[13px] text-text-secondary">
               Welcome back. Enter your credentials to continue.

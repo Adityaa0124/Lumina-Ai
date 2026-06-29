@@ -68,7 +68,7 @@ export function ChatInput({ onSend, disabled, isTyping }: ChatInputProps) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             disabled={disabled}
-            placeholder="Message Lumina…"
+            placeholder="Message Wuup…"
             className="w-full bg-transparent text-[14px] text-[#EDEDED] placeholder:text-[#3A3A3A] resize-none outline-none leading-[1.7] px-4 pt-3.5 pb-12 scrollbar-hidden max-h-[180px]"
             rows={1}
           />
@@ -118,7 +118,7 @@ export function ChatInput({ onSend, disabled, isTyping }: ChatInputProps) {
         </div>
 
         <p className="text-center text-[11px] text-[#2A2A2A] mt-2.5 select-none">
-          Lumina can make mistakes. Verify important information.
+          Wuup can make mistakes. Verify important information.
         </p>
       </div>
     </div>
